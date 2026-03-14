@@ -177,16 +177,17 @@ def train_models():
     print(f"Triage Model Accuracy: {triage_accuracy:.4f}")
 
     # Save models
-    os.makedirs("models", exist_ok=True)
-    joblib.dump(risk_model, "models/risk_model.pkl")
-    joblib.dump(triage_model, "models/triage_model.pkl")
+    models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
+    os.makedirs(models_dir, exist_ok=True)
+    joblib.dump(risk_model, os.path.join(models_dir, "risk_model.pkl"))
+    joblib.dump(triage_model, os.path.join(models_dir, "triage_model.pkl"))
 
     # Save feature importances
     feature_importance = {
         "risk": dict(zip(feature_cols, risk_model.feature_importances_.tolist())),
         "triage": dict(zip(feature_cols, triage_model.feature_importances_.tolist()))
     }
-    with open("models/feature_importance.json", "w") as f:
+    with open(os.path.join(models_dir, "feature_importance.json"), "w") as f:
         json.dump(feature_importance, f, indent=2)
 
     print("Models saved successfully!")
@@ -195,12 +196,16 @@ def train_models():
 
 def load_models():
     """Load trained models from disk."""
-    if not os.path.exists("models/risk_model.pkl"):
+    models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
+    risk_model_path = os.path.join(models_dir, "risk_model.pkl")
+    triage_model_path = os.path.join(models_dir, "triage_model.pkl")
+    
+    if not os.path.exists(risk_model_path):
         print("Models not found. Training new models...")
         return train_models()
 
-    risk_model = joblib.load("models/risk_model.pkl")
-    triage_model = joblib.load("models/triage_model.pkl")
+    risk_model = joblib.load(risk_model_path)
+    triage_model = joblib.load(triage_model_path)
     return risk_model, triage_model
 
 
