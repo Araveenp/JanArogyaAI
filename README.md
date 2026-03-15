@@ -5,6 +5,8 @@
 The system collects patient health information, analyzes it using **machine learning models and AI services**, predicts possible health risks, and helps hospitals manage patient priority & healthcare resources efficiently.
 
 ---
+Live Link: https://janarogya-ai.vercel.app/
+---
 
 # 🚀 Project Workflow
 
