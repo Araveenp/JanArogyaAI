@@ -2,7 +2,7 @@
 
 **JanArogya AI** is an **AI-powered remote healthcare platform** designed to assist **early disease detection, multilingual health communication, and intelligent risk monitoring**, particularly for **rural and underserved populations**.
 
-The system collects patient health information, analyzes it using **machine learning models and AI services**, predicts possible health risks, and helps hospitals manage patient priority and healthcare resources efficiently.
+The system collects patient health information, analyzes it using **machine learning models and AI services**, predicts possible health risks, and helps hospitals manage patient priority & healthcare resources efficiently.
 
 ---
 
