@@ -1,97 +1,243 @@
-# JanArogya AI
+# 🏥 JanArogya AI
 
-JanArogya AI is an **AI-powered remote healthcare platform** designed to assist early disease detection and health risk monitoring for rural and underserved populations.
+**JanArogya AI** is an **AI-powered remote healthcare platform** designed to assist **early disease detection, multilingual health communication, and intelligent risk monitoring**, particularly for **rural and underserved populations**.
 
-The platform collects patient health information, analyzes it using machine learning models, predicts possible health risks, and helps hospitals manage patient priority and resources efficiently.
+The system collects patient health information, analyzes it using **machine learning models and AI services**, predicts possible health risks, and helps hospitals manage patient priority and healthcare resources efficiently.
 
 ---
 
-## 🚀 Project Flow
+# 🚀 Project Workflow
 
+```
 Patient → AI Diagnosis → Risk Prediction → Hospital Workflow → Doctor Dashboard
+```
 
+### 1️⃣ Patient Input
 
-1. **Patient Input**
-   - Symptoms
-   - Vital signs
-   - Basic health history
+Patients provide health data through a web interface or voice interaction.
 
-2. **AI Diagnosis**
-   - Machine learning models analyze patient data.
+Information collected:
 
-3. **Risk Prediction**
-   - Patients are classified into:
-     - Emergency
-     - Urgent
-     - Routine
-
-4. **Hospital Workflow**
-   - Helps manage patient priority and hospital resources.
-
-5. **Doctor Dashboard**
-   - Doctors can monitor patient conditions and AI predictions.
+* Symptoms
+* Vital signs
+* Basic health history
+* Voice queries (via speech interface)
 
 ---
 
-## 🧩 Planned Modules
+### 2️⃣ AI Diagnosis
 
-- AI Diagnostic Module
-- Predictive Risk Engine
-- Remote Patient Data Collection
-- Privacy & Security Layer
-- Doctor Workflow Dashboard
+AI services process patient inputs using:
 
----
-
-## 🛠 Tech Stack (Planned)
-
-- **Backend:** Python (FastAPI / Flask, etc..)
-- **Machine Learning:** Scikit-learn, etc..
-- **Frontend:** Web Interface
-- **Database:** Firebase
+* **Gemini AI** for data extraction
+* **Machine Learning models** for medical analysis
+* **Voiceflow Dialog API** for conversational interaction
 
 ---
 
-## 📊 Dataset
+### 3️⃣ Risk Prediction
 
-Initial development will use public healthcare datasets.  
+Machine learning models evaluate the patient condition and classify risk levels:
+
+* 🔴 **Emergency**
+* 🟠 **Urgent**
+* 🟢 **Routine**
+
+This helps hospitals identify high-risk patients early.
+
+---
+
+### 4️⃣ Hospital Workflow
+
+Hospitals receive structured AI predictions to:
+
+* Prioritize patients
+* Optimize healthcare resources
+* Improve emergency response
+
+---
+
+### 5️⃣ Doctor Dashboard
+
+Doctors can view:
+
+* Patient health reports
+* AI risk predictions
+* Patient history
+* Hospital recommendations
+
+---
+
+# 🧩 Core Modules
+
+### AI Diagnostic Module
+
+Analyzes symptoms and patient data using machine learning.
+
+### Predictive Risk Engine
+
+Predicts medical risk level using trained models.
+
+### Voice Interaction System
+
+Supports **speech-to-text and text-to-speech** for accessibility.
+
+### Multilingual AI Layer
+
+Uses **AI translation** to support multiple languages.
+
+### Doctor Workflow Dashboard
+
+Provides healthcare professionals with patient insights.
+
+### Privacy & Security Layer
+
+Ensures secure storage and access to patient data.
+
+---
+
+# 🛠 Technology Stack
+
+| Layer                | Technologies                    |
+| -------------------- | ------------------------------- |
+| **Frontend**         | Web Interface, Web Speech API   |
+| **Backend**          | Python, Flask                   |
+| **Machine Learning** | Scikit-learn                    |
+| **AI Services**      | Gemini AI, Voiceflow Dialog API |
+| **Database**         | Firebase Firestore              |
+| **Authentication**   | Firebase Auth                   |
+| **External APIs**    | Google Maps API                 |
+| **Visualization**    | QRCode.js                       |
+
+---
+
+# 🤖 AI & Machine Learning Models
+
+### Random Forest Classifier
+
+Used for **health risk prediction**.
+
+Advantages:
+
+* Handles multiple health features
+* High accuracy on structured data
+* Robust against overfitting
+
+---
+
+### Explainable AI (XAI)
+
+The system integrates **Explainable AI** to show **feature importance**.
+
+Benefits:
+
+* Doctors understand model decisions
+* Transparent medical predictions
+* Improved trust in AI systems
+
+---
+
+# 🏗 System Architecture
+
+```mermaid
+graph TD
+    subgraph "Client Layer (Responsive Frontend)"
+        UI[Web Browser / Mobile]
+        Voice[Web Speech API - STT/TTS]
+        QR[QRCode.js - Report QR]
+    end
+
+    subgraph "Application Layer (Flask Backend)"
+        API[Flask Server]
+        Chat[Voiceflow Dialog API]
+        DataExt[Gemini AI - Data Extraction]
+        Trans[Gemini AI - Translation]
+    end
+
+    subgraph "AI & Intelligence Engine"
+        RF[Random Forest ML Model]
+        XAI[Explainable AI - Feature Importance]
+        Risk[Health Risk Assessment Engine]
+    end
+
+    subgraph "Data & External Services"
+        FB_Auth[Firebase Auth - Doctors/Hospitals]
+        FB_DB[Firestore NoSQL - Patient Records]
+        Maps[Google Maps API - Hospital Finder]
+    end
+
+    UI --> API
+    API --> Chat
+    API --> DataExt
+    API --> RF
+    RF --> XAI
+    API --> FB_DB
+    API --> FB_Auth
+```
+
+---
+
+# 📊 Healthcare Motivation
+
+| Metric                      | Explanation                                                                                                                                                                       |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Doctor Ratio**            | Although the national doctor ratio is around **1:811**, in many rural regions it is estimated to be **close to 1:11,000**, indicating a severe shortage of medical professionals. |
+| **Specialist Availability** | Urban hospitals have better specialist access, while **around 80% of specialist positions remain vacant in rural public health centers**.                                         |
+| **Diagnostic Access**       | Urban populations have access to private labs, but **less than 40% of rural populations have reliable access to diagnostic facilities**.                                          |
+| **Insurance Coverage**      | Despite government schemes covering **about 50% of the population**, many rural patients still rely on **out-of-pocket medical expenses**.                                        |
+
+---
+
+# 📂 Dataset
+
+The system initially uses **public healthcare datasets** for model training and testing.
+
+Datasets include:
+
+* Symptom-disease mapping datasets
+* Patient health records datasets
+* Medical symptom severity datasets
+
 Official datasets will be provided during the hackathon.
 
 ---
 
-## 🎯 Goal
+# 🎯 Project Goal
 
-Build a secure AI-based healthcare system that enables:
+Build a **secure AI-powered healthcare system** that enables:
 
-- Early disease risk prediction
-- Remote patient monitoring
-- Efficient hospital resource management
+* Early disease risk prediction
+* Remote patient monitoring
+* AI-assisted hospital workflow
+* Multilingual healthcare communication
+* Improved healthcare accessibility for rural populations
 
+---
 
-## Development Roadmap
+# 🛣 Development Roadmap
 
-Phase 1
-Problem research and architecture design
+### Phase 1
 
-Phase 2
-AI model development
+Problem research and system architecture design
 
-Phase 3
-Patient interface implementation
+### Phase 2
 
-Phase 4
-Doctor dashboard development
+Machine learning model development
 
-Phase 5
-Integration and testing
+### Phase 3
 
-| Metric                      | Explanation and Info                                                                                                                                                           |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Doctor Ratio**            | Although the national doctor ratio is around **1:811**, in many rural regions it is estimated to be **close to 1:11,000**, indicating severe shortage of medical professionals. |
-| **Specialist Availability** | Urban hospitals have better specialist access, while **around 80% of specialist positions remain vacant in rural public health centers**.                                       |
-| **Diagnostic Access**       | Urban populations have easy access to private labs, but **less than 40% of rural populations have reliable access to diagnostic facilities**.                                   |
-| **Insurance Coverage**      | Despite government schemes covering about **50% of the population**, many rural patients still rely heavily on **out-of-pocket medical expenses**.                              |
+Patient interface and voice interaction implementation
 
+### Phase 4
 
+Doctor dashboard and hospital workflow integration
 
-TEAM : HackStorm
+### Phase 5
+
+System integration, testing, and deployment
+
+---
+
+# 👨‍💻 Team
+
+**HackStorm**
